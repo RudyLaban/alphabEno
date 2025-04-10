@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#111827">
+	<link rel="stylesheet" href="style.css">
+	<link rel="manifest" href="manifest.json">
+	<link rel="icon" href="icon-192.png" type="image/png">
+	<link rel="apple-touch-icon" href="icon-512.png">
+	<script defer src="app.js"></script>
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('sw.js');
+			});
+		}
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<title>AlphabEno - Position de lettre dans l'alphabet</title>
+</head>
+
+<body class="bg-gray-900 text-white flex justify-center min-h-screen p-4">
+	<div class="w-full max-w-md">
+		<header class="text-center mb-32">
+			<img src="icon-192.png" alt="Logo" class="inline mx-auto w-16 h-16 mb-2 mr-4">
+			<h1 class="inline text-3xl font-extrabold" style="color:#ABABAB">AlphabEno</h1>
+		</header>
+	  
+		<h2 class="text-2xl font-bold mb-6 text-center">Position dans l'alphabet</h2>
+
+		<label id="inputLabel" class="block mb-2 text-sm font-medium">Saisis une chaîne (lettres uniquement)</label>
+		<input
+			type="text" 
+			id="inputText"
+			class="w-full p-3 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring focus:ring-indigo-500"
+			autocomplete="off" 
+			autocorrect="off" 
+			spellcheck="false"
+			placeholder="AbkZ">
+				
+		<label class="block mt-4 mb-2 text-sm font-medium">Résultat</label>
+		<input 
+			type="text" 
+			id="outputText" 
+			class="w-full p-3 rounded bg-gray-800 border border-gray-600" 
+			placeholder="121126"
+			disabled>
+		
+		<label class="block mt-4 mb-2 text-sm font-medium">Tatlusér</label>
+		<input
+			type="text" 
+			id="txetTuptuo" 
+			class="w-full p-3 rounded bg-gray-800 border border-gray-600" 
+			placeholder="621121"
+			disabled>
+	</div>
+</body>
+
+</html>
