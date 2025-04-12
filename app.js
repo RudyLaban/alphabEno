@@ -32,6 +32,7 @@ function stringPositionInAlphabet(input) {
 	.reverse()
 	.join('');
 	document.querySelector('#txetTuptuo').value = reversedPositions;
+	resetCopyBtnsColor();
 }
 
 /**
@@ -44,6 +45,7 @@ function copyInputValue(element) {
 	// Pour mobile
 	closestInput.setSelectionRange(0, 99999);
 	navigator.clipboard.writeText(closestInput.value);
+	changeCopyBtnColor(element);
 }
 
 /**
@@ -54,10 +56,39 @@ function inputIsFile(input) {
 	for (const copyBtn of copyBtns) {
 		if (input.value.length > 0) {
 			copyBtn.disabled = false;
-			copyBtn.classList.remove('opacity-50');
 		} else {
 			copyBtn.disabled = true;
-			copyBtn.classList.add('opacity-50');
+			resetCopyBtnColor(copyBtn);
 		}
+	}
+}
+
+/**
+ * Change le rendu du bouton Copier
+ * @param {*} copyBtn 
+ */
+function changeCopyBtnColor(copyBtn) {
+	copyBtn.classList.remove('border-indigo-500');
+	copyBtn.classList.add('bg-green-600', 'border-green-600');
+	copyBtn.textContent = "Copié !";
+}
+
+/**
+ * Réinitialise le rendu du bouton Copier
+ * @param {*} copyBtn 
+ */
+function resetCopyBtnColor(copyBtn) {
+	copyBtn.classList.add('border-indigo-500');
+	copyBtn.classList.remove('bg-green-600', 'border-green-600');
+	copyBtn.textContent = "Copier";
+}
+
+/**
+ * Réinitialise le rendu des boutons Copier
+ */
+function resetCopyBtnsColor() {
+	const copyBtns = document.querySelectorAll('.copy');
+	for (const copyBtn of copyBtns) {
+		resetCopyBtnColor(copyBtn);
 	}
 }
