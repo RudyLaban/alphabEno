@@ -1,6 +1,6 @@
 {
-  "name": "Alphabet Position",
-  "short_name": "AlphabetPos",
+  "name": "AlphabEno - Position de lettre dans l'alphabet",
+  "short_name": "AlphabEno",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#111827",
